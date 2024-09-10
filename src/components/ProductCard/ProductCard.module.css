@@ -1,0 +1,7 @@
+.container{
+    height: 20rem;
+    width: 15rem;
+    margin: 2rem;
+    background-color: var(--background-off-white);
+    border: 1px solid black;
+}

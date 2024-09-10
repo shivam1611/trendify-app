@@ -1,14 +1,47 @@
-/* Author: Shivam Sharma  */
+/* 
+Author: Shivam Sharma
+Role: Frontend Developer
+ */
 
+/* Google fonts CDN  */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ###################################################################### */
 
 /* CSS RESET  */
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style-type: none;
   text-decoration: none;
+  font-weight: 400;
+ 
 }
+body{
+  background-color: var(--background-off-white);
+}
+/* #################################################################### */
 
+/* Global Style variables  */
 
-/* COLOR PALLETE  */
+:root {
+  /* Color Pallete */
+  --primary-navy-blue: #2c3e50;
+  --secondary-pale-gold: #f4d03f;
+  --accent-coral: #ff6f61;
+  --neutral-gray: #ecf0f1;
+  --background-off-white: #fdfefe;
+  --dark-black: rgb(12, 12, 12);
+  --desabled-color: rgb(164, 164, 164);
+
+  /* Font Family  */
+  --font-primary-head: "Playfair Display", serif;
+  --body-font: "Montserrat", sans-serif;
+  --secondary-font: "Lora", serif;
+}

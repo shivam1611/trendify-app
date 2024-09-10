@@ -1,8 +1,18 @@
+import { BrowserRouter,Route, Routes} from "react-router-dom"
+import HomePage from "./pages/HomePage/HomePage"
+import ProductPage from "./pages/ProductPage/ProductPage"
+import CartSection from './pages/CartSection/CartSection'
 
 
 const App = () => {
   return (
-    <div>App</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/productpage" element={<ProductPage/>}/>
+        <Route path="/cartsection" element={<CartSection/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
