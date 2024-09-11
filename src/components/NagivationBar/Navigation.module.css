@@ -53,6 +53,12 @@
 }
 .category_items,.option_items {
   border-bottom: 3px solid transparent;
+  color: var(--dark-black);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
  
 }
 .category_items:hover {
@@ -63,6 +69,19 @@
 .option_items:hover{
     border-color: var(--accent-coral);
     color: var(--accent-coral);
-
+  }
+  .nav_icon{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    color: inherit;
+  }
+  :global(.active){
+    color: var(--accent-coral);
+    
+ 
 }
+
 

@@ -1,8 +1,6 @@
 import Navigation from "../../components/NagivationBar/Navigation";
-import style from "./CartSection.module.css";
 import { motion } from "framer-motion";
-
-const CartSection = () => {
+const UserProfile = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -14,4 +12,4 @@ const CartSection = () => {
   );
 };
 
-export default CartSection;
+export default UserProfile;
