@@ -21,9 +21,8 @@ Role: Frontend Developer
   list-style-type: none;
   text-decoration: none;
   font-weight: 400;
- 
 }
-body{
+body {
   background-color: var(--background-off-white);
 }
 /* #################################################################### */
@@ -33,15 +32,25 @@ body{
 :root {
   /* Color Pallete */
   --primary-navy-blue: #2c3e50;
-  --secondary-pale-gold: #f4d03f;
+  --secondary-pale-gold: #ffdc50;
   --accent-coral: #ff6f61;
   --neutral-gray: #ecf0f1;
   --background-off-white: #fdfefe;
   --dark-black: rgb(12, 12, 12);
   --desabled-color: rgb(164, 164, 164);
 
+  /* State Color Pallete  */
+  --accent-coral-hover: #ed5648;
+  --secondary-pale-gold-hover: #f4d03f;
+  --primary-navy-blue-hover: #1e2935;
+
   /* Font Family  */
   --font-primary-head: "Playfair Display", serif;
-  --body-font: "Montserrat", sans-serif;
+  --body-font: "Roboto", sans-serif;
   --secondary-font: "Lora", serif;
+}
+
+
+html{
+  scroll-behavior: smooth;
 }

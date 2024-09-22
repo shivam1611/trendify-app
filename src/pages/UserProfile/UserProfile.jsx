@@ -1,14 +1,21 @@
 import Navigation from "../../components/NagivationBar/Navigation";
+import style from "./UserProfile.module.css";
 import { motion } from "framer-motion";
 const UserProfile = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
-    >
+    <div className={style.container}>
       <Navigation />
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: .6, delay: 0.5 }}
+        className={style.main_container}
+      >
+        <main className={style.profile_header}>
+
+        </main>
+      </motion.div>
+    </div>
   );
 };
 
