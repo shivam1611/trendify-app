@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import { NavLink, } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import style from "./Navigation.module.css";
 
-const Navigation = ({setQuery }) => {
-  
+const Navigation = ({ setQuery }) => {
+  const navigate = useNavigate();
+
   return (
     <div className={style.navigation_section}>
       <ul className={` ${style.category_navlist} ${style.navlist}`}>
         <li
           onClick={() => {
+            navigate("/");
             setQuery("men's clothing");
           }}
           className={`${style.nav_items} ${style.category_items}`}
@@ -18,6 +20,7 @@ const Navigation = ({setQuery }) => {
 
         <li
           onClick={() => {
+            navigate("/");
             setQuery("women's clothing");
           }}
           className={`${style.nav_items} ${style.category_items}`}
@@ -26,6 +29,7 @@ const Navigation = ({setQuery }) => {
         </li>
         <li
           onClick={() => {
+            navigate("/");
             setQuery("jewelery");
           }}
           className={`${style.nav_items} ${style.category_items}`}
@@ -34,6 +38,7 @@ const Navigation = ({setQuery }) => {
         </li>
         <li
           onClick={() => {
+            navigate("/");
             setQuery("electronics");
           }}
           className={`${style.nav_items} ${style.category_items}`}

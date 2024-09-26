@@ -1,4 +1,5 @@
 import style from "./ProductCard.module.css";
+import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ title, rating, price, image_url, count }) => {
@@ -47,3 +48,13 @@ const ProductCard = ({ title, rating, price, image_url, count }) => {
 };
 
 export default ProductCard;
+
+ProductCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  image_url: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+  product_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
+};

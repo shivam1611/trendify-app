@@ -7,7 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
 
 const HomePage = () => {
-  const [data, setData] = useState([]); // Initialize state as an empty array
+  const data = [];
   const [query, setQuery] = useState("jewelery"); //initial query state for the API
   const [loading, setLoading] = useState(false); //loader state
 
@@ -22,8 +22,8 @@ const HomePage = () => {
         if (!response.ok) {
           alert("Error Occured!!");
         }
+
         const result = await response.json();
-        setData(result);
       } catch (err) {
         alert(err.message);
       } finally {
@@ -46,6 +46,7 @@ const HomePage = () => {
             <ProductCard
               title={card.title}
               key={card.id}
+              product_id={card.id}
               rating={card.rating.rate}
               count={card.rating.count}
               price={card.price}

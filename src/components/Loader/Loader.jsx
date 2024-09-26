@@ -6,7 +6,7 @@ const Loader = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: .3, stiffness: 300 }}
+      transition={{ duration: 0.3, stiffness: 300 }}
       className={style.container}
     >
       <div className={style.loader}></div>
