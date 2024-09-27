@@ -6,7 +6,7 @@
 
 .main_container {
   min-height: 100vh;
-  width: min(90rem, 100%);
+  width: min(110rem, 100%);
   margin-inline: auto;
   padding: 2rem;
   display: flex;
