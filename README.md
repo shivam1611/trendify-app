@@ -1,6 +1,6 @@
 # Trendify - A React E-Commerce Web Application .
 
-### live webiste at :- https://react-blog-website.vercel.app/
+### live webiste at :- https://trendifysite.netlify.app/
 
 ## concepts Are Used :
 
