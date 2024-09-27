@@ -6,15 +6,15 @@
 
 .main_container {
   min-height: 100vh;
-  width: 100%;
+  width: min(90rem, 100%);
+  margin-inline: auto;
   padding: 2rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  
   position: relative;
 }
 .header {
@@ -26,11 +26,13 @@
   color: var(--desabled-gray);
   padding-inline: 2rem;
   font-family: var(--body-font);
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 .result_text {
   font-size: 1.1rem;
   font-weight: 500;
+  font-style: italic;
 }
 .header > div {
   font-size: 0.8rem;
@@ -38,9 +40,29 @@
 .product_container {
   width: 100%;
   height: max(60rem, fit-content);
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+}
+
+@media screen and (max-width: 1100px) {
+  .product_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 720px) {
+  .product_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .header {
+    padding-inline: 1.5rem;
+  }
+}
+@media screen and (max-width: 610px) {
+  .product_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

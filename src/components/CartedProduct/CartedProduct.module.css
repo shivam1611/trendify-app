@@ -1,7 +1,6 @@
 .container {
   height: 28rem;
-  /* width: 20rem; */
-  width: 100%;
+  width: 20rem;
   /* height: fit-content; */
   background-color: var(--background-off-white);
   position: relative;
@@ -113,11 +112,14 @@
   align-items: center;
   border-radius: 0.1rem;
   font-size: 0.9rem;
+  gap: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 .btn_primary {
   background-color: var(--accent-coral);
   color: var(--background-off-white);
+  width: 80%;
 }
 .btn_primary:hover {
   cursor: pointer;
@@ -126,6 +128,8 @@
 .btn_secondary {
   border: 2px solid var(--primary-navy-blue);
   color: var(--primary-navy-blue);
+  width: 25%;
+  /* font-size: 1rem; */
 }
 .btn_secondary:hover {
   border: none;

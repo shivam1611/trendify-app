@@ -1,9 +1,9 @@
-// Initial State 
+// Initial State
 const initialCart = {
   cart: [],
 };
 
-// Reducer Function 
+// Reducer Function
 const cart_reducer = (state = initialCart, action) => {
   switch (action.type) {
     // add product
@@ -28,8 +28,8 @@ const cart_reducer = (state = initialCart, action) => {
 // Action Creators
 
 // function that adds the data to the state
-export const addproducts = (data) => {
-  return { type: "cart/addpProduct", payload: data };
+export const addproduct = (data) => {
+  return { type: "cart/addProduct", payload: data };
 };
 
 // function that remove product from cart
@@ -42,5 +42,4 @@ export const clearCart = () => {
   return { type: "cart/clearCart" };
 };
 
-
-export default cart_reducer
+export default cart_reducer;

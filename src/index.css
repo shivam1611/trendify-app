@@ -50,7 +50,31 @@ body {
   --secondary-font: "Lora", serif;
 }
 
-
-html{
+html {
   scroll-behavior: smooth;
+}
+
+/* Global CSS for layouting  */
+
+:global(.page_container) {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  position: relative;
+}
+
+:global(.product_container) {
+  width: 100%;
+  height: max(60rem, fit-content);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }

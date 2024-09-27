@@ -1,9 +1,42 @@
 import style from "./ProductCard.module.css";
 import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addproduct } from "../../Features/cart_section/Cart_slice";
+import store from "../../store";
+import { useState } from "react";
 
-const ProductCard = ({ title, rating, price, image_url, count }) => {
+const ProductCard = ({
+  title,
+  rating,
+  price,
+  image_url,
+  count,
+  product_id,
+}) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [inCart, setInCart] = useState(false);
+
+  const products = useSelector((store) => store.product_list.product_list);
+  const cart = useSelector((store) => store.cart_reducer.cart);
+
+  function handleAddCart(product_id) {
+    const isInCart = cart.some((item) => item.id === product_id);
+    if (!isInCart) {
+      const item = products.filter((item) => item.id == product_id);
+      item.forEach((item) => dispatch(addproduct(item)));
+      setInCart(true);
+    } else {
+      alert("Already Carted");
+    }
+  }
+
+  function handleViewProduct(product_ID) {
+    const product_arr = products.filter((items) => items.id == product_ID);
+    // setItem(product_arr[0]);
+  }
+
   return (
     <div className={style.container}>
       <div className={style.special_tag}>
@@ -32,11 +65,16 @@ const ProductCard = ({ title, rating, price, image_url, count }) => {
           </p>
         </div>
         <div className={style.button_container}>
-          <button className={`${style.btn} ${style.btn_primary}`}>
-            Add to Cart
+          <button
+            className={`${style.btn} ${
+              inCart == false ? style.btn_primary : style.btn_primary_carted
+            }`}
+            onClick={() => handleAddCart(product_id)}
+          >
+            {inCart ? `Added to cart` : "Add to cart"}
           </button>
           <button
-            onClick={() => navigate("/productPage")}
+            onClick={() => handleViewProduct(product_id)}
             className={`${style.btn} ${style.btn_secondary}`}
           >
             View Product

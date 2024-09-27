@@ -5,9 +5,12 @@ import style from "./HomePage.module.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
+import { useDispatch, useSelector } from "react-redux";
+import { storeProduct } from "../../Features/Product_slice/product_list";
 
 const HomePage = () => {
-  const data = [];
+  const dispatch = useDispatch();
+  const products = useSelector((store) => store.product_list.product_list);
   const [query, setQuery] = useState("jewelery"); //initial query state for the API
   const [loading, setLoading] = useState(false); //loader state
 
@@ -24,6 +27,7 @@ const HomePage = () => {
         }
 
         const result = await response.json();
+        dispatch(storeProduct(result));
       } catch (err) {
         alert(err.message);
       } finally {
@@ -31,7 +35,7 @@ const HomePage = () => {
       }
     }
     getData();
-  }, [query]);
+  }, [query, dispatch]);
 
   return (
     <div className={style.homepage}>
@@ -39,10 +43,10 @@ const HomePage = () => {
       <div className={style.main_container}>
         <div className={style.header}>
           <p className={style.result_text}>Results</p>
-          <div>4 Products Found</div>
+          <div>{products.length} Products Found</div>
         </div>
         <div className={style.product_container}>
-          {data.map((card) => (
+          {products.map((card) => (
             <ProductCard
               title={card.title}
               key={card.id}
