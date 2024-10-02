@@ -11,7 +11,7 @@ import { storeProduct } from "../../Features/Product_slice/product_list";
 const HomePage = () => {
   const dispatch = useDispatch();
   const products = useSelector((store) => store.product_list.product_list);
-  const [query, setQuery] = useState("jewelery"); //initial query state for the API
+  const [query, setQuery] = useState("women's clothing"); //initial query state for the API
   const [loading, setLoading] = useState(false); //loader state
 
   useEffect(() => {

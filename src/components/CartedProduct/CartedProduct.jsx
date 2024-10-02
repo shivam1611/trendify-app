@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import style from "./CartedProduct.module.css";
 import { removeProduct } from "../../Features/cart_section/Cart_slice";
+import { useState } from "react";
+import Warning from "../Warning/Warning";
 const CartedProduct = ({
   title,
   rating,
@@ -8,6 +10,7 @@ const CartedProduct = ({
   image_url,
   count,
   product_id,
+  showWarning,
 }) => {
   const dispatch = useDispatch();
   function handleRemoveCart(product_id) {
@@ -16,6 +19,7 @@ const CartedProduct = ({
 
   return (
     <div className={style.container}>
+      {showWarning && <Warning />}
       <div className={style.special_tag}>
         <p className={style.text_very_sm}>BestSeller</p>
         <i className={`fa-solid fa-star ${style.icon_very_sm}`}></i>
